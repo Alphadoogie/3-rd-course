@@ -28,6 +28,7 @@ namespace GameFramework.Networking
     /// 
     /// NOTE: This class is beta and subject to changebreaking change without warning.
     /// </summary>
+    [System.Obsolete]
     public class NetworkManagerCallbacks : NetworkManager
     {
         public override void OnClientConnect(NetworkConnection conn)

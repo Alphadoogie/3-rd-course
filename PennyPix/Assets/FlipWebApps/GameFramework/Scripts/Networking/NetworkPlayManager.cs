@@ -33,8 +33,10 @@ namespace GameFramework.Networking
     /// 
     /// NOTE: This class is beta and subject to changebreaking change without warning.
     /// </summary>
+    [Obsolete]
     public class NetworkPlayManager : Singleton<NetworkPlayManager>
     {
+        [Obsolete]
         public NetworkDiscovery NetworkDiscovery;
         public Dictionary<string, NetworkGame> NetworkDiscoveryServers;
 
@@ -96,6 +98,7 @@ namespace GameFramework.Networking
             return false;
         }
 
+        [Obsolete]
         public NetworkClient StartHost()
         {
             Client = NetworkManager.singleton.StartHost();

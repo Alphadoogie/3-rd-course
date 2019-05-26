@@ -19,6 +19,7 @@
 // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //----------------------------------------------
 
+using System;
 using System.Collections.Generic;
 using GameFramework.GameObjects;
 using GameFramework.GameObjects.Components;
@@ -33,6 +34,8 @@ namespace GameFramework.Networking
     /// 
     /// NOTE: This class is beta and subject to changebreaking change without warning.
     /// </summary>
+    /// 
+    [Obsolete]
     public class NetworkGameSetupInterfaceManager : Singleton<NetworkGameSetupInterfaceManager>
     {
         public DialogInstance DialogInstance;

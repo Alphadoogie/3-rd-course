@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2517940123192110846}
   - component: {fileID: 4816656201340613951}
-  - component: {fileID: 2994970946407808345}
   - component: {fileID: 7646419476825405622}
   - component: {fileID: 3757100284574965961}
   m_Layer: 0
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178468552010978403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.21, y: 0.21, z: 0.21}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,22 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!111 &2994970946407808345
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178468552010978403}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 461ac0f881b5c734f9267b96b28f0309, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 461ac0f881b5c734f9267b96b28f0309, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!61 &7646419476825405622
 BoxCollider2D:
   m_ObjectHideFlags: 0

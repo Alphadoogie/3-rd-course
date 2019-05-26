@@ -75,6 +75,7 @@ namespace GameFramework.Localisation.Editor
             _importExportFilename = Application.dataPath;
         }
 
+        [Obsolete]
         public override void OnInspectorGUI()
         {
             _mainHelpRect = EditorHelper.ShowHideableHelpBox("GameFramework.LocalisationEditorWindow.Main", "Welcome to the new Game Framework localisation system!\n\nThese localisation files are where you can define localised text in different languages.\n\nIf you have previously used .csv files then you can import these under the tools tab.\n\nIf you experience any problems, can help with new translations, or have improvement suggestions then please get in contact. Your support is appreciated.", _mainHelpRect);
