@@ -37,7 +37,7 @@ namespace GameFramework.GameStructure.Game.Components
     public class CollisionHandler : MonoBehaviour
     {
         public enum DisableAfterUseType { None, ThisComponent, GameObject, Colliders}
-
+        
         /// <summary>
         /// Tag with which this gameobject can collide.
         /// </summary>

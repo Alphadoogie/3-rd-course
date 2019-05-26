@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
+[Serializable]
 public class PennyDeath : MonoBehaviour
 {
     public new ParticleSystem particleSystem;
@@ -25,5 +27,12 @@ public class PennyDeath : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        AddingScore.count = 0;
     }
+
+    static void SaveData()
+    {
+
+    }
+
 }

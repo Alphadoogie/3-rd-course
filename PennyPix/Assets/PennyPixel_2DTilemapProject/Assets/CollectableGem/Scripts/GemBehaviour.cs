@@ -26,6 +26,7 @@ public class GemBehaviour : MonoBehaviour
 
 	void GemCollected()
 	{
+        AddingScore.count += 10;
 		gemCollider2D.enabled = false;
 		gemVisuals.SetActive (false);
 		collectedParticleSystem.SetActive (true);

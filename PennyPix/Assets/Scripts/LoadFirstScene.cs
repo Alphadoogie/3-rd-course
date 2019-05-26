@@ -8,6 +8,7 @@ public class LoadFirstScene : MonoBehaviour
     {
         LoadScene();
     }
+
     public void LoadScene()
     {
         if (Input.GetKey(KeyCode.Alpha1))
