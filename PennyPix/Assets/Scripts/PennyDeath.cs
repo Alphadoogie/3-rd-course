@@ -30,7 +30,7 @@ public class PennyDeath : MonoBehaviour
         AddingScore.count = 0;
     }
 
-    static void SaveData()
+    static void LoadData()
     {
 
     }
