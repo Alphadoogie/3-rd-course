@@ -57,8 +57,8 @@ namespace GameFramework.GameStructure.Game.GameActions.Player
         /// <returns></returns>
         protected override void Execute(bool isStart)
         {
-            Assert.IsTrue(GameManager.IsActive, "To use the Change Player Coins Action, ensure that you have a GameManager added to your scene.");
-            GameManager.Instance.Player.AddCoins(Amount);
+            /*Assert.IsTrue(GameManager.IsActive, "To use the Change Player Coins Action, ensure that you have a GameManager added to your scene.");
+            GameManager.Instance.Player.AddCoins(Amount);*/
         }
     }
 }
