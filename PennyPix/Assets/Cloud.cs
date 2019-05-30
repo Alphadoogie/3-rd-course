@@ -9,12 +9,10 @@ public class Cloud : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (transform.position.x > 4f)
-            transform.localEulerAngles = new Vector3(0f, 90f, 0f);
-        moveRight = false;
-		if (transform.position.x < -4f)
-           
-        moveRight = true;
+		if (transform.position.x > 73.56)
+			moveRight = false;
+		if (transform.position.x < 65.50)
+			moveRight = true;
 
 		if (moveRight)
 			transform.position = new Vector2(transform.position.x + moveSpeed * Time.deltaTime, transform.position.y);
