@@ -8,6 +8,7 @@ public class LoadSecondScene : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Second");
+            CharacterInfo.SaveData("Second");
         }
     }
 }

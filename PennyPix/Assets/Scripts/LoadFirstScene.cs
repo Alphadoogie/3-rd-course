@@ -8,6 +8,7 @@ public class LoadFirstScene : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("First");
+            CharacterInfo.SaveData("First");
         }
     }
 }

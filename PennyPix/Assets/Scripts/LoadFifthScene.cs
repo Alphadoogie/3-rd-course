@@ -8,6 +8,7 @@ public class LoadFifthScene : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Five");
+            CharacterInfo.SaveData("Five");
         }
     }
 }

@@ -8,7 +8,7 @@ public class LoadThirdScene : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Third");
+            CharacterInfo.SaveData("Third");
         }
-
     }
 }

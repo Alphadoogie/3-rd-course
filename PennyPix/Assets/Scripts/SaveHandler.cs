@@ -39,15 +39,6 @@ public class SaveHandler : MonoBehaviour
         Debug.LogWarning(current.scoreCount);
         Debug.LogWarning(current.sceneName);
     }
-
-
-   /* public void LoadData()
-    {
-        current = Deserialize();
-        SceneManager.LoadScene(current.sceneName);
-        AddingScore.count = current.scoreCount;
-        Player.GetComponent<Transform>().position = new Vector3(current.x, current.y, current.z);
-    }*/
     public static CharacterInfo Deserialize()
     {
         CharacterInfo obj = new CharacterInfo();
@@ -59,6 +50,17 @@ public class SaveHandler : MonoBehaviour
             file.Close();
         }
         return obj;
+    }
+
+    public static void  SaveOnLoad()
+    {
+        CharacterInfo obj = new CharacterInfo();
+        obj.x = 0;
+        obj.y = 0;
+        obj.z = 0;
+        obj.sceneName = SceneManager.GetActiveScene().name;
+        obj.scoreCount = 0;
+        CharacterInfo.SaveData(obj);
     }
 }
 
@@ -82,6 +84,15 @@ public class CharacterInfo
 
     public static void SaveData(CharacterInfo obj)
     {
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/save.pp");
+        binaryFormatter.Serialize(file, obj);
+        file.Close();
+    }
+    public static void SaveData(string sceneName)
+    {
+        CharacterInfo obj = new CharacterInfo();
+        obj.sceneName = sceneName;
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/save.pp");
         binaryFormatter.Serialize(file, obj);
