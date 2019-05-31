@@ -90,10 +90,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4083584257042482796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db8e879ee2b3264eb78b96179748aca, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c8cd12ef3cf88340a339c5c264b792b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  current:
+    x: 0
+    y: 0
+    z: 0
+    scoreCount: 0
+    sceneName: MainMenu
 --- !u!61 &2118610147226397860
 BoxCollider2D:
   m_ObjectHideFlags: 0
