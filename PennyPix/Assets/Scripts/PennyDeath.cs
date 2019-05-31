@@ -22,17 +22,17 @@ public class PennyDeath : MonoBehaviour
             particleSystem.Play();
             Destroy(Player);
             StartCoroutine(Timer());
-            CharacterInfo characterInfo = new CharacterInfo();
-            characterInfo = SaveHandler.Deserialize();
-            SceneManager.LoadScene(characterInfo.sceneName);
-            PlayerSpawn.position = new Vector3(characterInfo.x, characterInfo.y, characterInfo.z);
-            AddingScore.count = characterInfo.scoreCount;
-            IsDead = true;
+            
         }
     }
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(2f);
-
+        CharacterInfo characterInfo = new CharacterInfo();
+        characterInfo = SaveHandler.Deserialize();
+        SceneManager.LoadScene(characterInfo.sceneName);
+        PlayerSpawn.position = new Vector3(characterInfo.x, characterInfo.y, characterInfo.z);
+        AddingScore.count = characterInfo.scoreCount;
+        IsDead = true;
     }
 }
