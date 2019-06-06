@@ -42,6 +42,11 @@
                     <ImageBrush/>
                 </Button.Background>
             </Button>
+            <Button x:Name="button_db" Content="База данных" Click="Button_db_Click" MinWidth="100" Margin="45,5,28,0.879" FontFamily="Showcard Gothic" Foreground="LightGreen">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
 
         </StackPanel>
     </Grid>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="KP_WPF.Database"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KP_WPF"
+        xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+        Title="Database" Height="450" Width="1200" MinWidth="800"> 
+    <Grid>
+        <Button x:Name="button_back" Content="назад" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Click="Button_back_Click">
+            <Button.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="/PNG/test3.png" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Просто 'назад' и не более"/>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <TextBox x:Name="tb_flightNumber" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 50, 0, 0" MinHeight="30" MinWidth="100" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" MaxLength="10" TextChanged="Tb_flightNumber_TextChanged"/>
+        <TextBox x:Name="tb_destination" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 150, 0, 0" MinHeight="30" MinWidth="100"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_id" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300, 300, 150, 0" MinHeight="30" MinWidth="100"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_surname" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 200, 0, 0" MinHeight="30" MinWidth="100"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_luggageSpace" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 250, 0, 0" MinHeight="30" MinWidth="100"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="Tb_luggageSpace_TextChanged" MaxLength="3"/>
+        <TextBox x:Name="tb_luggageAmount" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 300, 0, 0" MinHeight="30" MinWidth="100"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="Tb_luggageAmount_TextChanged" MaxLength="3"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150, 50, 0, 0" Content="Номер рейса"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150, 150, 0, 0" Content="Пункт назначения"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150, 100, 0, 0" Content="Дата вылета"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150, 200, 0, 0" Content="Фамилия"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150, 250, 0, 0" Content="Места для багажа"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150, 300, 0, 0" Content="Вес багажа"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400, 300, 130, 0" Content="id"/>
+        <DataGrid x:Name="main_dataGrid" HorizontalAlignment="Right" Margin="450,30,30,30" VerticalAlignment="Stretch" AutoGenerateColumns="True" MinHeight="300"/>
+        <Button x:Name="button_add" Content="Добавить" MinWidth="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,350,0,0" Click="Button_add_Click"/>
+        <Button x:Name="button_delete" Content="Удалить" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300, 350, 0, 0" Click="Button_delete_Click"/>
+        <wpfTool:DateTimePicker x:Name="dt_date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 100, 0, 0" MinHeight="30" Width="100" AllowSpin="False" Maximum="12/31/2019 23:59:00" Minimum="1980-01-01" Format="FullDateTime" AllowTextInput="False" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+    </Grid>
+</Window>
