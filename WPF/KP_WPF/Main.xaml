@@ -1,0 +1,48 @@
+﻿<Window x:Class="KP_WPF.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KP_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Main" Height="450" Width="512.295" Icon="depositphotos_99239190-stock-illustration-orthodox-cross-isometric-3d-icon.jpg" Background="{x:Null}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="1.529,10,6.501,0" Width="497.865">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="2.png"/>
+            </StackPanel.Background>
+            <Button x:Name="button_stringOpen" Content="Строки" Click="Button_stringOpen" MinWidth="100" Margin="183.501,142.142,178.553,0.879">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button_createObject" Content="     Создание объекта" Click="Button_createObject_click" MinWidth="100" Margin="153.638,5,151.579,0.879" Foreground="White">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button_test" Content="Тест" Click="Button_test_click" MinWidth="100" Margin="126.865,5,113.679,0.879" VerticalAlignment="Center">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button_graphic" Content="Графика" Click="Button_graphic_click" MinWidth="100" Margin="102.151,5,93.913,0">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button_article" Content="Статья" Click="Button_report_click" MinWidth="100" Margin="78.466,5,65.08,0.879" FontFamily="Showcard Gothic">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</Window>

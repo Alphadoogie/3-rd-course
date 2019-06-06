@@ -1,0 +1,106 @@
+﻿<Window x:Class="KP_WPF.CreateObject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KP_WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="CreateObject" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="button_back" Content="назад" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Click="Button_back_Click">
+            <Button.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="/PNG/test3.png" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Просто 'назад' и не более"/>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <Label x:Name="SirtName" Content="Фамилия: "  HorizontalAlignment="Left" Margin="253,129,0,0" VerticalAlignment="Top" Width="64" Foreground="Black" Background="{x:Null}" Height="23"></Label>
+        <Label x:Name="Name" Content="Имя: "  HorizontalAlignment="Left" Margin="253,157,0,0" VerticalAlignment="Top" Width="64" Foreground="Black" Background="{x:Null}" Height="24"></Label>
+        <Label x:Name="ThirdName" Content="Отчество: "  HorizontalAlignment="Left" Margin="253,180,0,0" VerticalAlignment="Top" Width="64" Foreground="Black" Background="{x:Null}" Height="24"></Label>
+        <Label x:Name="Sex" Content="Пол: "  HorizontalAlignment="Left" Margin="258,208,0,0" VerticalAlignment="Top" Width="64" Foreground="Black" Background="{x:Null}" Height="24"></Label>
+        <Label x:Name="City" Content="Город:  "  HorizontalAlignment="Left" Margin="253,238,0,0" VerticalAlignment="Top" Width="64" Foreground="Black" Background="{x:Null}" Height="24"></Label>
+        <Label x:Name="DateOtBirth" Content="Дата рождения:  "  HorizontalAlignment="Left" Margin="220,260,0,0" VerticalAlignment="Top" Width="97" Foreground="Black" Background="{x:Null}" Height="24"></Label>
+        <Label x:Name="TelNum" Content="Номер телефона:"  HorizontalAlignment="Left" Margin="209,293,0,0" VerticalAlignment="Top" Width="113" Foreground="Black" Background="{x:Null}" Height="24">
+        </Label>
+        <TextBox x:Name="tb_SirtName" HorizontalAlignment="Left" Height="20" Margin="322,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" TextChanged="tb_Sirt_Name_TextChanged">
+            <TextBox.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="/PNG/test1.jpg" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Поле 'Фамилия' может содержать&#10; только символы  кирилицы"/>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox x:Name="tb_Name" HorizontalAlignment="Left" Height="17" Margin="322,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" TextChanged="Tb_Name_TextChanged">
+            <TextBox.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="/PNG/test2.jpg" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Поле 'Имя' может содержать&#10;только символы кирилицы"/>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox x:Name="tb_ThirdName" HorizontalAlignment="Left" Height="19" Margin="322,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" TextChanged="Tb_Third_Name_TextChanged">
+            <TextBox.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="/PNG/test3.png" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Поле 'Отчество' может содержать&#10;только символы кирилицы"/>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox x:Name="tb_city" HorizontalAlignment="Left" Height="19" Margin="322,237,0,0" TextWrapping="Wrap" Text="Введите город" VerticalAlignment="Top" Width="173" TextChanged="Tb_city_TextChanged">
+            <TextBox.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="PNG/test4.png" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Поле 'Город' может содержать&#10;только символы кирилицы"/>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox x:Name="tb_data" HorizontalAlignment="Left" Height="19" Margin="322,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" TextChanged="Tb_Data_TextChanged">
+            <TextBox.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="/PNG/test5.png" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Поле 'Дата рождения'&#10; в формате ДДММГГ"/>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox x:Name="tb_num" HorizontalAlignment="Left" Height="36" Margin="322,293,0,0" TextWrapping="Wrap" Text="Введите номер " VerticalAlignment="Top" Width="173" TextChanged="Tb_num_TextChanged">
+            <TextBox.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="/PNG/test4.png" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Поле 'Номер телефона'&#10; в формате +375(29,33,25,44)......."/>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="359,336,0,0" VerticalAlignment="Top" Width="102" Height="35" Click="Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="127" Margin="583,29,0,0" VerticalAlignment="Top" Width="174" OpacityMask="Black" Source="/PNG/logo5.png"/>
+        <ComboBox Name="phonesList" Height="30" VerticalAlignment="Top" Margin="322,202,297,0">
+            <TextBlock>Мужской</TextBlock>
+            <TextBlock>Женский</TextBlock>
+            <ComboBox.ToolTip>
+                <ToolTip Height="460" Width="470">
+                    <StackPanel Height="450" Width="460">
+                        <Image Height="360" Width="320" Source="PNG/test2.jpg" />
+                        <Label FontFamily="Calibri" FontSize="20" Content="Поле 'Пол'&#10; в формате Мужской/Женский"/>
+                    </StackPanel>
+                </ToolTip>
+            </ComboBox.ToolTip>
+        </ComboBox>
+
+    </Grid>
+
+</Window>

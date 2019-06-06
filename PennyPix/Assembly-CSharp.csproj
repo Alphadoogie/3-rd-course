@@ -10,7 +10,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{0AE96E1E-A99B-8907-9ADA-AEBD4BE221F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -560,6 +561,7 @@
     <None Include="Assets\PennyPixel_2DTilemapProject\Assets\Add-Ons\Cinemachine\ReleaseNotes.txt" />
     <None Include="Assets\FlipWebApps\GameFramework\_Demo\About\ReadMe.txt" />
     <None Include="Assets\FlipWebApps\GameFramework\Upgrade Guide.txt" />
+    <None Include="ClassDiagram.cd" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Alexander/Documents/GitHub/3-rd-course/PennyPix/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
