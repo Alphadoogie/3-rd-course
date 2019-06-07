@@ -34,7 +34,24 @@
         <DataGrid x:Name="main_dataGrid" HorizontalAlignment="Right" Margin="450,30,30,30" VerticalAlignment="Stretch" AutoGenerateColumns="True" MinHeight="300"/>
         <Button x:Name="button_add" Content="Добавить" MinWidth="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,350,0,0" Click="Button_add_Click"/>
         <Button x:Name="button_delete" Content="Удалить" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300, 350, 0, 0" Click="Button_delete_Click"/>
+        <Button x:Name="button_report" Content="Создать отчёт" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300, 380, 0, 0" Click="Button_report_Click"/>
         <wpfTool:DateTimePicker x:Name="dt_date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 100, 0, 0" MinHeight="30" Width="100" AllowSpin="False" Maximum="12/31/2019 23:59:00" Minimum="1980-01-01" Format="FullDateTime" AllowTextInput="False" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-
+        <ComboBox x:Name="cb_example" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300, 50, 0, 0" MinWidth="150" SelectionChanged="Cb_example_SelectionChanged">
+            <TextBlock Text="1. Сортировка"/>
+            <TextBlock Text="2. Повторы номеров"/>
+            <TextBlock Text="3. Пассажир с условием" MaxWidth="100" TextWrapping="WrapWithOverflow"/>
+            <TextBlock Text="4. Вес минского багажа"  MaxWidth="100" TextWrapping="WrapWithOverflow"/>
+        </ComboBox>
+        <Label  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,30,0,0" Content="Задания" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="26"/>
+        <Label  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,80,0,0" Content="Группировка" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <ComboBox x:Name="cb_group" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300, 100, 0, 0" MinWidth="150" SelectionChanged="Cb_group_SelectionChanged">
+            <TextBlock Text="1. flightNumber"/>
+            <TextBlock Text="2. departureDate"/>
+            <TextBlock Text="3. destination"/>
+            <TextBlock Text="4. surname"/>
+            <TextBlock Text="5. luggageSpace"/>
+            <TextBlock Text="6. luggageAmount"/>
+        </ComboBox>
+        <Button x:Name="button_update" Content="Обновить" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 380, 0, 0" Click="Button_update_Click"/>
     </Grid>
 </Window>

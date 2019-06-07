@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace KP_WPF
         private string surname;
         private int luggageSpace;
         private double luggageAmount;
+        DataTable dt = new DataTable();
         public Database()
         {
             InitializeComponent();
@@ -64,6 +66,7 @@ namespace KP_WPF
                 {
                     if (id > 0)
                     {
+                        connection.Close();
                         connection.Open();
                         string query = $"DELETE FROM [Luggage] WHERE Id = {id}";
                         SqlCommand command = new SqlCommand(query, connection);
@@ -93,12 +96,13 @@ namespace KP_WPF
         {
             try
             {
+                connection.Close();
                 connection.Open();
                 string query = "SELECT * FROM [Luggage]";
                 SqlCommand sqlCommand = new SqlCommand(query, connection);
                 sqlCommand.ExecuteNonQuery();
                 SqlDataAdapter sqlData = new SqlDataAdapter(sqlCommand);
-                DataTable dt = new DataTable("Luggage");
+                 dt = new DataTable("Luggage");
                 sqlData.Fill(dt);
                 main_dataGrid.ItemsSource = dt.DefaultView;
                 sqlData.Update(dt);
@@ -106,7 +110,7 @@ namespace KP_WPF
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + " " + ex.GetBaseException());
             }
         }
 
@@ -198,6 +202,208 @@ namespace KP_WPF
             {
                 tb_luggageAmount.Text = null;
             }
+        }
+        private void GroupBY(string table)
+        {
+            try
+            {
+                connection.Close();
+                connection.Open();
+                string query = $"SELECT {table}, COUNT({table}) AS [{table}Count] FROM [Luggage] GROUP BY {table}";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                SqlDataAdapter sqlData = new SqlDataAdapter(command);
+                 dt = new DataTable("Luggage");
+                sqlData.Fill(dt);
+                main_dataGrid.ItemsSource = dt.DefaultView;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " " + ex.GetBaseException());
+            }
+        }
+
+        private void FirstEx()
+        {
+            try
+            {
+                connection.Close();
+                connection.Open();
+                string query = $"Select * FROM [Luggage] Order BY surname, departureDate";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                SqlDataAdapter sqlData = new SqlDataAdapter(command);
+                 dt = new DataTable("Bills");
+                sqlData.Fill(dt);
+                main_dataGrid.ItemsSource = dt.DefaultView;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " " + ex.GetBaseException());
+            }
+        }
+
+        private void SecondEx()
+        {
+            try
+            {
+                connection.Close();
+                connection.Open();
+                string query = $"SELECT flightNumber, departureDate, COUNT(*) AS [CountNums] FROM [Luggage] GROUP BY departureDate, flightNumber HAVING COUNT(*) > 1";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                SqlDataAdapter sqlData = new SqlDataAdapter(command);
+                 dt = new DataTable("Luggage");
+                sqlData.Fill(dt);
+                main_dataGrid.ItemsSource = dt.DefaultView;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " " + ex.GetBaseException());
+            }
+        }
+
+        private void ThirdEx()
+        {
+            try
+            {
+                connection.Close();
+                connection.Open();
+                string query = $"SELECT surname, flightNumber, departureDate, luggageAmount FROM [Luggage] WHERE (DATEPART(HOUR, CONVERT(varchar(8), departureDate, 108)) BETWEEN '12' AND '15') AND luggageAmount >= 20";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                SqlDataAdapter sqlData = new SqlDataAdapter(command);
+                 dt = new DataTable("Luggage");
+                sqlData.Fill(dt);
+                main_dataGrid.ItemsSource = dt.DefaultView;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " " + ex.GetBaseException());
+            }
+        }
+
+        private void FourthEx()
+        {
+            try
+            {
+                connection.Close();
+                connection.Open();
+                string query = $"SELECT SUM(luggageAmount) AS [MinskAmount] FROM [Luggage] WHERE destination = N'Минск'";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                SqlDataAdapter sqlData = new SqlDataAdapter(command);
+                dt = new DataTable("Luggage");
+                sqlData.Fill(dt);
+                main_dataGrid.ItemsSource = dt.DefaultView;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " " + ex.GetBaseException());
+            }
+        }
+        private void Cb_example_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cb_example.SelectedItem != null)
+            {
+                cb_group.SelectedItem = null;
+            }
+            switch (cb_example.SelectedIndex)
+            {
+                case 0:
+                    {
+                        FirstEx();
+                        break;
+                    }
+                case 1:
+                    {
+                        SecondEx();
+                        break;
+                    }
+                case 2:
+                    {
+                        ThirdEx();
+                        break;
+                    }
+                case 3:
+                    {
+                        FourthEx();
+                        break;
+                    }
+            }
+        }
+
+        private void Cb_group_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cb_group.SelectedItem != null)
+            {
+                cb_example.SelectedItem = null;
+            }
+            switch (cb_group.SelectedIndex)
+            {
+                case 0:
+                    {
+                        GroupBY("flightNumber");
+                        break;
+                    }
+                case 1:
+                    {
+                        GroupBY("departureDate");
+                        break;
+                    }
+                case 2:
+                    {
+                        GroupBY("destination");
+                        break;
+                    }
+                case 3:
+                    {
+                        GroupBY("surname");
+                        break;
+                    }
+                case 4:
+                    {
+                        GroupBY("luggageSpace");
+                        break;
+                    }
+                case 5:
+                    {
+                        GroupBY("luggageAmount");
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+
+        private void Button_update_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateDataGrid();
+        }
+
+        private void Button_report_Click(object sender, RoutedEventArgs e)
+        {
+            StreamWriter swExtLogFile = new StreamWriter("D:/report.txt", true);
+            int i;
+            swExtLogFile.Write(Environment.NewLine);
+            foreach (DataRow row in dt.Rows)
+            {
+                object[] array = row.ItemArray;
+                for (i = 0; i < array.Length - 1; i++)
+                {
+                    swExtLogFile.Write(array[i].ToString() + " | ");
+                }
+                swExtLogFile.WriteLine(array[i].ToString());
+            }
+            swExtLogFile.Write("--------------------------------------------------------------------------------" + DateTime.Now.ToString());
+            swExtLogFile.Flush();
+            swExtLogFile.Close();
+            MessageBox.Show("Отчёт создан");
         }
     }
 }
