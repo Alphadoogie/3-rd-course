@@ -26,6 +26,7 @@ namespace KP_WPF
             splashScreen.Show(true);
             Thread.Sleep(1500);
             InitializeComponent();
+            Background = Theme.background;
         }
 
         private void Button_stringOpen(object sender, RoutedEventArgs e)
@@ -68,6 +69,10 @@ namespace KP_WPF
             Database database = new Database();
             database.Show();
             this.Close();
+        }
+        private void Cb_choose_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            Background = Theme.ChangeTheme(cb_choose.SelectedIndex);
         }
     }
 }

@@ -24,6 +24,7 @@ namespace KP_WPF
         public String23()
         {
             InitializeComponent();
+            Background = Theme.background;
         }
         private void Button_back_Click(object sender, RoutedEventArgs e)
         {

@@ -61,6 +61,7 @@ namespace KP_WPF
         public Test()
         {
             InitializeComponent();
+            Background = Theme.background;
             test();
         }
 

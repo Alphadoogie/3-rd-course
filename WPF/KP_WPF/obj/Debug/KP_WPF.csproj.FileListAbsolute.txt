@@ -184,3 +184,4 @@ C:\Users\Alexander\Documents\GitHub\3-rd-course\WPF\KP_WPF\bin\Debug\sv\Xceed.Wp
 C:\Users\Alexander\Documents\GitHub\3-rd-course\WPF\KP_WPF\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Alexander\Documents\GitHub\3-rd-course\WPF\KP_WPF\obj\Debug\Database.baml
 C:\Users\Alexander\Documents\GitHub\3-rd-course\WPF\KP_WPF\obj\Debug\KP_WPF.csproj.CopyComplete
+C:\Users\Alexander\Documents\GitHub\3-rd-course\WPF\KP_WPF\obj\Debug\App.baml

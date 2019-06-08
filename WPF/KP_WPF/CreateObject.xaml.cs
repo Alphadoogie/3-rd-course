@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
@@ -24,6 +14,7 @@ namespace KP_WPF
         public CreateObject()
         {
             InitializeComponent();
+            Background = Theme.background;
         }
         private void Button_back_Click(object sender, RoutedEventArgs e)
         {
@@ -31,58 +22,6 @@ namespace KP_WPF
             main.Show();
             this.Close();
         }
-
-
-
-        //private void tb_mail_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    if (tb_mail.Text.Length == 0)
-        //    {
-        //        MessageBox.Show("не работает");
-        //        tb_mail.Focus();
-        //    }
-        //    else if (Regex.IsMatch(tb_mail.Text, @" ^[A - Za - z0 - 9][A - Za - z0 - 9\.-_] *[A - Za - z0 - 9] *@([A - Za - z0 - 9] + ([A - Za - z0 - 9 -] *[A - Za - z0 - 9] +) *\.) +[A - Za - z] * $"))
-        //    {
-        //        MessageBox.Show("не работает");
-        //        //tb_mail.Select(0, tb_mail.Text.Length);
-        //        //tb_mail.Focus();
-        //    }
-        //    /*  string pochta = tb_mail.Text;
-        //      string emailPattern = @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$";
-        //      bool isItEmail = Regex.IsMatch(pochta, emailPattern);
-
-        //      /*
-        //      tb_mail.MinHeight = 12;
-        //      string pochta = tb_mail.Text;
-        //      for (int i = 0; i < tb_mail.Text.Length; i++)
-        //      {
-        //          var mail = new System.Net.Mail.MailAddress(pochta);
-        //      }
-
-
-        //      /*
-        //      double parsedValue;
-        //      tb_mail.MaxLength = 12;
-        //      if (!double.TryParse(tb_mail.Text, out parsedValue))
-        //      {
-        //          tb_mail.Text = "";
-        //      }
-
-
-
-        //      for (int i = 0; i < tb_mail.Text.Length; i++)
-        //      {
-        //          if (Regex.IsMatch(tb_mail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", RegexOptions.IgnoreCase))
-        //          {
-        //              return;
-        //          }
-        //          else
-        //          {
-        //              MessageBox.Show("Введи нормально ");
-        //          }
-        //      }
-        //   */
-        //}
 
         private void tb_Sirt_Name_TextChanged(object sender, TextChangedEventArgs e)
         {

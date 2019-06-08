@@ -9,6 +9,7 @@
         Title="Main" Height="450" Width="512.295" Icon="depositphotos_99239190-stock-illustration-orthodox-cross-isometric-3d-icon.jpg" Background="{x:Null}">
 
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
@@ -49,5 +50,10 @@
             </Button>
 
         </StackPanel>
+        <ComboBox x:Name="cb_choose" HorizontalAlignment="Stretch" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="Cb_choose_SelectionChanged">
+            <TextBlock Text="Тёмная тема"/>
+            <TextBlock Text="Светлая тема"/>
+            <TextBlock Text="Синяя тема"/>
+        </ComboBox>
     </Grid>
 </Window>

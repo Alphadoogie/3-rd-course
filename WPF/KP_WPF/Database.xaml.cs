@@ -34,6 +34,7 @@ namespace KP_WPF
         public Database()
         {
             InitializeComponent();
+            Background = Theme.background;
             UpdateDataGrid();
         }
 

@@ -18,6 +18,7 @@ namespace KP_WPF
         public Graphic()
         {
             InitializeComponent();
+            Background = Theme.background;
             DataFill();
             Execute();
             image1.Source = new DrawingImage(drawingGroup);
