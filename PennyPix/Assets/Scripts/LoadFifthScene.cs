@@ -7,6 +7,7 @@ public class LoadFifthScene : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            PennyDeath.IsDead = false;
             SceneManager.LoadScene("Five");
             CharacterInfo.SaveData("Five");
         }

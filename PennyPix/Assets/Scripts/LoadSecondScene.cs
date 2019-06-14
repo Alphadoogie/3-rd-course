@@ -7,6 +7,7 @@ public class LoadSecondScene : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            PennyDeath.IsDead = false;
             SceneManager.LoadScene("Second");
             CharacterInfo.SaveData("Second");
         }

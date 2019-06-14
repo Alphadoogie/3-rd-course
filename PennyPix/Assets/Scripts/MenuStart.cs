@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +8,7 @@ public class MenuStart : MonoBehaviour
     {
         SceneManager.LoadScene("First");
         CharacterInfo.SaveData("First");
+        CallPauseMenu.exInput = true;
     }
 
     public void ContinuePressed()
@@ -18,8 +18,15 @@ public class MenuStart : MonoBehaviour
         characterInfo = SaveHandler.Deserialize();
         SceneManager.LoadScene(characterInfo.sceneName);
         PlayerSpawn.position = new Vector3(characterInfo.x, characterInfo.y, characterInfo.z);
-        AddingScore.count = characterInfo.scoreCount;    
+        AddingScore.count = characterInfo.scoreCount;
+        CallPauseMenu.exInput = true;
     }
+
+    public void ShowManual()
+    {
+        Process.Start("C:/Mamzel.chm");
+    }
+
     public void ExitPressed()
     {
         Application.Quit();

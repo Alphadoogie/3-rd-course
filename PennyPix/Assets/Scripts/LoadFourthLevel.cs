@@ -7,6 +7,7 @@ public class LoadFourthLevel : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            PennyDeath.IsDead = false;
             SceneManager.LoadScene("Fourth");
             CharacterInfo.SaveData("Fourth");
         }

@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Cloud : MonoBehaviour {
 	
 	float dirX, moveSpeed = 3f;
 	bool moveRight = true;
-
-	// Update is called once per frame
 	void Update () {
 		if (transform.position.x > 73.56)
 			moveRight = false;
