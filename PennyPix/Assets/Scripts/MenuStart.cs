@@ -24,7 +24,10 @@ public class MenuStart : MonoBehaviour
 
     public void ShowManual()
     {
-        Process.Start("C:/Mamzel.chm");
+        UnityEngine.Debug.LogWarning(Application.dataPath);
+        UnityEngine.Debug.LogWarning(Application.persistentDataPath);
+        UnityEngine.Debug.LogWarning(Application.streamingAssetsPath);
+        Process.Start(Application.streamingAssetsPath + "/Mamzel.chm");
     }
 
     public void ExitPressed()
